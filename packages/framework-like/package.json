@@ -1,0 +1,28 @@
+{
+  "name": "@repro/framework-like",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./AppEntryPoint": "./AppEntryPoint.js",
+    "./Calendar": "./Calendar.js",
+    "./DataGrid": "./DataGrid.js",
+    "./Editor": "./Editor.js",
+    "./Tree": "./Tree.js",
+    "./CalendarLoader": "./CalendarLoader.js",
+    "./EditorLoader": "./EditorLoader.js",
+    "./DiffEditorLoader": "./DiffEditorLoader.js",
+    "./DataGridLoader": "./DataGridLoader.js",
+    "./TreeLoader": "./TreeLoader.js"
+  },
+  "peerDependencies": {
+    "@reduxjs/toolkit": "^2.9.2",
+    "@repro/ui": "^1.0.0",
+    "i18next": "^25.6.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-i18next": "^16.2.3",
+    "react-redux": "^9.2.0",
+    "react-router": "^7.13.1"
+  }
+}

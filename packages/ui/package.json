@@ -1,0 +1,21 @@
+{
+  "name": "@repro/ui",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    "./calendar": "./calendar.js",
+    "./chart": "./chart.js",
+    "./chatbot": "./chatbot.js",
+    "./datagrid": "./datagrid.js",
+    "./diagram": "./diagram.js",
+    "./editor": "./editor.js",
+    "./scheduler": "./scheduler.js",
+    "./splashscreen": "./splashscreen.js",
+    "./tree": "./tree.js",
+    "./viewer": "./viewer.js",
+    "./webcomponents": "./webcomponents.js"
+  },
+  "peerDependencies": {
+    "react": "^19.2.4"
+  }
+}

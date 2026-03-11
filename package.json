@@ -1,0 +1,26 @@
+{
+  "name": "module-federation-vite-static-deadlock",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "preview": "serve dist"
+  },
+  "dependencies": {
+    "@repro/framework-like": "file:packages/framework-like",
+    "@repro/ui": "file:packages/ui",
+    "@module-federation/enhanced": "2.0.1",
+    "@module-federation/vite": "1.12.3",
+    "@vitejs/plugin-react": "5.1.2",
+    "@reduxjs/toolkit": "2.9.2",
+    "i18next": "25.6.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-i18next": "16.2.3",
+    "react-redux": "9.2.0",
+    "react-router": "7.13.1",
+    "serve": "14.2.4",
+    "vite": "7.1.9"
+  }
+}
