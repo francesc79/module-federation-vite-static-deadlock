@@ -12,8 +12,8 @@ importers:
         specifier: 2.0.1
         version: 2.0.1(@rspack/core@1.7.8)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)
       '@module-federation/vite':
-        specifier: 1.12.3
-        version: 1.12.3(rollup@4.59.0)(typescript@5.9.3)(vite@7.1.9(jiti@2.4.2))
+        specifier: https://pkg.pr.new/@module-federation/vite@472
+        version: https://pkg.pr.new/@module-federation/vite@472(rollup@4.59.0)(typescript@5.9.3)(vite@7.1.9(jiti@2.4.2))
       '@reduxjs/toolkit':
         specifier: 2.9.2
         version: 2.9.2(react-redux@9.2.0(react@19.2.4)(redux@5.0.1))(react@19.2.4)
@@ -420,8 +420,9 @@ packages:
   '@module-federation/third-party-dts-extractor@2.0.1':
     resolution: {integrity: sha512-neKSr6FNUeGRh+YR57l/QZUzPytJXuJx+babF7j5iGJG3FP+kfizr6QD0hgVis5KEoXMVbQ8yyvG0slERizeyw==}
 
-  '@module-federation/vite@1.12.3':
-    resolution: {integrity: sha512-21ABHYGYraVUfpm2VcR3/m1DwE3sOi5wAky9nasYzC2nSifM8WHcj14BcmoDxsiBZXKytBi3FsnC4K4Ax9G0tw==}
+  '@module-federation/vite@https://pkg.pr.new/@module-federation/vite@472':
+    resolution: {integrity: sha512-9elANpsjYtE1v1qzoaurIQQj55a4kQ08wvT463I2afn750OUhfMHGu4Ts4BVTPB+nVMct6yjF3KteNbH7r/80g==, tarball: https://pkg.pr.new/@module-federation/vite@472}
+    version: 1.12.3
     peerDependencies:
       vite: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
 
@@ -2108,7 +2109,7 @@ snapshots:
       fs-extra: 9.1.0
       resolve: 1.22.8
 
-  '@module-federation/vite@1.12.3(rollup@4.59.0)(typescript@5.9.3)(vite@7.1.9(jiti@2.4.2))':
+  '@module-federation/vite@https://pkg.pr.new/@module-federation/vite@472(rollup@4.59.0)(typescript@5.9.3)(vite@7.1.9(jiti@2.4.2))':
     dependencies:
       '@module-federation/dts-plugin': 2.0.1(typescript@5.9.3)
       '@module-federation/runtime': 2.0.1

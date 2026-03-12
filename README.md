@@ -1,28 +1,14 @@
-# module-federation/vite static build deadlock repro
+# module-federation/vite static build repro
 
-This repro isolates a static build issue after upgrading to:
+This repro highlights a production-build issue around `remoteEntry` chunking and shared eager imports.
 
-- `@module-federation/vite@1.12.3`
-- `@module-federation/enhanced@2.0.1`
+It was also tested with PR `#472` via:
 
-## Expected
+- `https://pkg.pr.new/@module-federation/vite@472`
 
-After `vite build` and serving `dist`, opening the page should render the React app and the button counter.
+and the generated build still shows the same pattern.
 
-## Actual
-
-The page stays on `Loading...`.
-
-Browser console shows:
-
-- `[repro] entry loaded`
-- no `[repro] bootstrap module evaluated`
-- no `[repro] bootstrap import resolved`
-- no rejected promise either
-
-That means the dynamic import of `./bootstrap` stays pending.
-
-## Steps
+## Run
 
 ```bash
 pnpm install
@@ -30,28 +16,29 @@ pnpm build
 pnpm preview
 ```
 
-Then open the printed URL, usually `http://localhost:3000`.
+Open the printed URL, usually `http://localhost:3000`.
 
-## Why this repro is useful
+## Expected
 
-The app is intentionally small but shaped like the failing app:
+The React app should render.
 
-- one app container
-- one shared `framework-like` package
-- one shared `ui` package with subpath exports
-- `runtime: 'enhanced'`
-- `manifest: true`
-- static preview from built assets
+## Actual
 
-The current build output shows the same structural pattern seen in the failing playground build:
+In the failing case, the page stays blank or stuck on the initial loading state.
 
-- `remoteEntry.js` imports a chunk that also contains re-exported exposed modules
-- that imported chunk eagerly pulls shared `__loadShare__` wrappers for UI subpaths
-- `hostInit` preloads `remoteEntry.js` together with that same chunk and shared wrappers
+## What to inspect after build
 
-Relevant generated files:
+These generated files are the important ones:
 
 - `dist/remoteEntry.js`
 - `dist/assets/hostInit-*.js`
 - `dist/assets/TreeLoader-*.js`
 - `dist/assets/reproApp__loadShare__*.js`
+
+The problematic pattern is:
+
+- `remoteEntry.js` imports a loader-named chunk
+- `remoteEntry.js` eagerly imports shared `__loadShare__` wrappers
+- `hostInit` preloads `remoteEntry.js`, that same chunk, and the same shared wrappers
+
+So `remoteEntry` is not isolated as a stable runtime entry.

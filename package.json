@@ -11,7 +11,7 @@
     "@repro/framework-like": "file:packages/framework-like",
     "@repro/ui": "file:packages/ui",
     "@module-federation/enhanced": "2.0.1",
-    "@module-federation/vite": "1.12.3",
+    "@module-federation/vite": "https://pkg.pr.new/@module-federation/vite@472",
     "@vitejs/plugin-react": "5.1.2",
     "@reduxjs/toolkit": "2.9.2",
     "i18next": "25.6.0",
